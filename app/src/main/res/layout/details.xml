@@ -4,15 +4,16 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        android:contentDescription="@string/astr_name"
-        android:src="@drawable/pict_astr" />
+        android:id="@+id/imageViewDetails"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+         />
 
     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/textViewDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/astr_note"
+        android:editable="false"
         >
     </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 

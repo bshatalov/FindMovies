@@ -29,7 +29,7 @@
             <ImageView
                 android:layout_width="109dp"
                 android:layout_height="125dp"
-                android:contentDescription="@string/astr_name"
+                android:contentDescription="@string/name_astr"
                 android:src="@drawable/pict_astr_small" />
 
             <LinearLayout
@@ -46,7 +46,8 @@
                     android:id="@+id/textViewAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/astr_name"
+                    android:text="@string/name_astr"
+                    android:editable="false"
                     >
                 </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
@@ -72,7 +73,7 @@
             <ImageView
                 android:layout_width="109dp"
                 android:layout_height="125dp"
-                android:contentDescription="@string/male_name"
+                android:contentDescription="@string/name_male"
                 android:src="@drawable/pict_male_small" />
 
             <LinearLayout
@@ -89,7 +90,8 @@
                     android:id="@+id/textViewMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/male_name"
+                    android:text="@string/name_male"
+                    android:editable="false"
                     >
                 </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
@@ -113,7 +115,7 @@
             <ImageView
                 android:layout_width="109dp"
                 android:layout_height="125dp"
-                android:contentDescription="@string/term_name"
+                android:contentDescription="@string/name_term"
                 android:src="@drawable/pict_term_small" />
 
             <LinearLayout
@@ -130,7 +132,8 @@
                     android:id="@+id/textViewTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/term_name"
+                    android:text="@string/name_term"
+                    android:editable="false"
                     >
                 </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
@@ -154,7 +157,7 @@
             <ImageView
                 android:layout_width="109dp"
                 android:layout_height="125dp"
-                android:contentDescription="@string/king_name"
+                android:contentDescription="@string/name_king"
                 android:src="@drawable/pict_king_small" />
 
             <LinearLayout
@@ -171,7 +174,8 @@
                     android:id="@+id/textViewKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/king_name"
+                    android:text="@string/name_king"
+                    android:editable="false"
                     >
                 </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
