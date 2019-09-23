@@ -42,21 +42,20 @@
                 android:orientation="vertical"
                 >
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
-                    android:editable="false"
                     android:text="@string/name_astr"
                     android:textIsSelectable="true"
-                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnDetailsAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"></Button>
+                    android:text="@string/details"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -87,23 +86,23 @@
                 android:orientation="vertical"
                 >
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
-                    android:editable="false"
                     android:text="@string/name_male"
                     android:textIsSelectable="true"
-                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnDetailsMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"></Button>
+                    android:text="@string/details"/>
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -130,21 +129,20 @@
                 android:orientation="vertical"
                 >
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
-                    android:editable="false"
                     android:text="@string/name_term"
                     android:textIsSelectable="true"
-                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:textSize="18sp"/>
 
                 <Button
                     android:id="@+id/btnDetailsTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"></Button>
+                    android:text="@string/details"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -173,21 +171,20 @@
                 android:orientation="vertical"
                 >
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
-                    android:editable="false"
                     android:text="@string/name_king"
                     android:textIsSelectable="true"
-                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:textSize="18sp"/>
 
                 <Button
                     android:id="@+id/btnDetailsKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"></Button>
+                    android:text="@string/details"/>
             </LinearLayout>
         </LinearLayout>
 

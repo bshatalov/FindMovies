@@ -11,4 +11,7 @@
     <string name="details">Детали</string>
     <string name="invite_friend">Пригласить друга</string>
     <string name="chooser_title">Поделиться</string>
+    <string name="textViewCommentsHint">Поделитесь своими комментариями</string>
+    <string name="checkBoxLikeText">Лайк</string>
+    <string name="buttonOk">OK</string>
 </resources>

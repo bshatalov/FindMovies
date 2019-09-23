@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String imageCode = "IMAGE";
     public static final String noteCode = "NOTE";
     public static final String MESS_TEXT_VIEW_NUM = "TEXT_VIEW_NUM";
+
+    public static final String commentsCode = "COMMENTS";
+    public static final String likeCode = "LIKE";
 
     private Button mButtonDetailsAstr;
     private Button mButtonDetailsMale;
@@ -164,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
                 comments = data.getStringExtra(CODE_COMMENTS);
                 like = data.getBooleanExtra(CODE_LIKE, false);
             }
-            Log.i("Comments", "Comments are: " + comments);
-            Log.i("Like", like? "Like" : "Dislike");
+            Log.i("FIND_MOVIES", "Comments are: " + comments);
+            Log.i("FIND_MOVIES", like? "Like" : "Dislike");
         }
     }
 }
