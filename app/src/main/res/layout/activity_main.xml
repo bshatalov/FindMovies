@@ -9,10 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp"
         android:orientation="vertical"
         >
 
@@ -20,25 +20,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
             >
 
             <ImageView
                 android:layout_width="109dp"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/name_astr"
                 android:src="@drawable/pict_astr_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
                 android:orientation="vertical"
                 >
 
@@ -46,10 +46,11 @@
                     android:id="@+id/textViewAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/name_astr"
+                    android:duplicateParentState="false"
                     android:editable="false"
-                    >
-                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:text="@string/name_astr"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
                 <Button
                     android:id="@+id/btnDetailsAstr"
@@ -64,25 +65,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
             >
 
             <ImageView
                 android:layout_width="109dp"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/name_male"
                 android:src="@drawable/pict_male_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
                 android:orientation="vertical"
                 >
 
@@ -90,10 +91,11 @@
                     android:id="@+id/textViewMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/name_male"
+                    android:duplicateParentState="false"
                     android:editable="false"
-                    >
-                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:text="@string/name_male"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
                 <Button
                     android:id="@+id/btnDetailsMale"
@@ -106,25 +108,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
             >
 
             <ImageView
                 android:layout_width="109dp"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/name_term"
                 android:src="@drawable/pict_term_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
                 android:orientation="vertical"
                 >
 
@@ -132,10 +134,11 @@
                     android:id="@+id/textViewTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/name_term"
+                    android:duplicateParentState="false"
                     android:editable="false"
-                    >
-                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:text="@string/name_term"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
                 <Button
                     android:id="@+id/btnDetailsTerm"
@@ -148,25 +151,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
             >
 
             <ImageView
                 android:layout_width="109dp"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/name_king"
                 android:src="@drawable/pict_king_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
                 android:orientation="vertical"
                 >
 
@@ -174,10 +177,11 @@
                     android:id="@+id/textViewKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/name_king"
+                    android:duplicateParentState="false"
                     android:editable="false"
-                    >
-                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+                    android:text="@string/name_king"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"></androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
                 <Button
                     android:id="@+id/btnDetailsKing"
@@ -186,6 +190,13 @@
                     android:text="@string/details"></Button>
             </LinearLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnInviteFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invite_friend">
+        </Button>
 
     </LinearLayout>
 

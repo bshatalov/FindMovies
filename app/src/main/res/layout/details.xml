@@ -6,8 +6,8 @@
     <ImageView
         android:id="@+id/imageViewDetails"
         android:layout_width="300dp"
-        android:layout_height="400dp"
-         />
+        android:layout_height="350dp"
+        android:contentDescription="@string/details" />
 
     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
         android:id="@+id/textViewDetails"
@@ -16,5 +16,22 @@
         android:editable="false"
         >
     </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBoxLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    </androidx.appcompat.widget.AppCompatCheckBox>
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/textViewComments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int colorPrimary = 0xFF000000;
     private static final int colorAccent = 0xFFFF0000;
-    //public static final String buttonCode = "BUTTON";
     public static final String imageCode = "IMAGE";
     public static final String noteCode = "NOTE";
     public static final String MESS_TEXT_VIEW_NUM = "TEXT_VIEW_NUM";
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonDetailsMale;
     private Button mButtonDetailsTerm;
     private Button mButtonDetailsKing;
+
+    private Button mInviteFriend;
 
     private TextView mTextViewAstr;
     private TextView mTextViewMale;
@@ -32,22 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
     private static Intent intentDetails;
 
-    /////////////////
+    // Сохранить состояние
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(R.id.btnDetailsAstr, mTextViewAstr.getCurrentTextColor());
+        saveTextViewColor(outState, mTextViewAstr);
+        saveTextViewColor(outState, mTextViewMale);
+        saveTextViewColor(outState, mTextViewKing);
+        saveTextViewColor(outState, mTextViewTerm);
     }
-    protected void onCreate(Bundle savedInstanceState) {
-    ...
-        if (savedInstanceState != null) {
-            String message = savedInstanceState.getString(MESS_KEY);
-            if (!TextUtils.isEmpty(message)) {
-                mMessageEditText.setText(message);
-            }
-        }
-    ...
-    }
-    /////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         mButtonDetailsTerm = findViewById(R.id.btnDetailsTerm);
         mButtonDetailsKing = findViewById(R.id.btnDetailsKing);
 
+        mInviteFriend = findViewById(R.id.btnInviteFriend);
+
         mTextViewAstr = findViewById(R.id.textViewAstr);
         mTextViewMale = findViewById(R.id.textViewMale);
         mTextViewTerm = findViewById(R.id.textViewTerm);
@@ -69,15 +65,55 @@ public class MainActivity extends AppCompatActivity {
                 openDetails((Button) v);
             }
         };
+
         mButtonDetailsAstr.setOnClickListener(mOnClickListener);
         mButtonDetailsKing.setOnClickListener(mOnClickListener);
         mButtonDetailsMale.setOnClickListener(mOnClickListener);
         mButtonDetailsTerm.setOnClickListener(mOnClickListener);
 
+        mInviteFriend.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        String textMessage = "Установите наше приложение! FindMovies";
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+                        sendIntent.setType("text/plain");
+
+                        String title = getResources().getString(R.string.chooser_title);
+                        // Создаем Intent для отображения диалога выбора.
+                        Intent chooser = Intent.createChooser(sendIntent, title);
+
+                        // Проверяем, что intent может быть успешно обработан
+                        if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(chooser);
+                        }
+                    }
+                }
+        );
+
         if (intentDetails == null) {
             intentDetails = new Intent(MainActivity.this, Details.class);
         }
-   }
+
+        // Восстановить состояние
+        if (savedInstanceState != null) {
+            getSavedTextViewColor(savedInstanceState, mTextViewAstr);
+            getSavedTextViewColor(savedInstanceState, mTextViewMale);
+            getSavedTextViewColor(savedInstanceState, mTextViewKing);
+            getSavedTextViewColor(savedInstanceState, mTextViewTerm);
+        }
+    }
+
+    // Восстановить цвет
+    private void getSavedTextViewColor(Bundle savedInstanceState, TextView tv){
+        tv.setTextColor(savedInstanceState.getInt(String.valueOf(tv.getId())));
+    }
+
+    // Сохранить цвет
+    private void saveTextViewColor(Bundle outState, TextView tv){
+        outState.putInt(String.valueOf(tv.getId()), tv.getCurrentTextColor());
+    }
 
     private void resetAllColors(){
         mTextViewAstr.setTextColor(colorPrimary);
@@ -86,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewKing.setTextColor(colorPrimary);
     }
 
+    // Действия перед нажатием кнопки Детали
     private void beforeDetails(
             TextView textView
             ,int imageId
@@ -93,9 +130,12 @@ public class MainActivity extends AppCompatActivity {
     ) {
         resetAllColors();
         textView.setTextColor(colorAccent);
+        // Передать код изображения и описания
         intentDetails.putExtra(imageCode, imageId);
         intentDetails.putExtra(noteCode, stringId);
     }
+
+    final static int REQUEST_CODE_LIKE = 1;
 
     private void openDetails(Button button) {
 
@@ -109,6 +149,23 @@ public class MainActivity extends AppCompatActivity {
             beforeDetails(mTextViewKing, R.drawable.pict_king, R.string.note_king);
         }
 
-        startActivity(intentDetails);
+        startActivityForResult(intentDetails, REQUEST_CODE_LIKE);
+    }
+
+    String CODE_COMMENTS = "COMMENTS";
+    String CODE_LIKE = "LIKE";
+
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+        if (requestCode == REQUEST_CODE_LIKE) {
+            String comments = null;
+            Boolean like = null;
+            if (resultCode == RESULT_OK) {
+                comments = data.getStringExtra(CODE_COMMENTS);
+                like = data.getBooleanExtra(CODE_LIKE, false);
+            }
+            Log.i("Comments", "Comments are: " + comments);
+            Log.i("Like", like? "Like" : "Dislike");
+        }
     }
 }
