@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="400dp">
@@ -14,7 +16,7 @@
         android:layout_height="400dp"
         android:contentDescription="@string/details" />
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -29,7 +31,7 @@
                 android:paddingRight="20dp"
                 android:paddingVertical="40dp"
                 android:text="@string/checkBoxLikeText"
-                />
+                tools:targetApi="o"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonOk"
@@ -45,13 +47,12 @@
         </LinearLayout>
 
 
-    </LinearLayout>>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:editable="false"
         />
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,22 +41,25 @@
                 android:paddingRight="4dp"
                 android:paddingTop="4dp"
                 android:orientation="vertical"
+                android:gravity="bottom"
+
                 >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:duplicateParentState="false"
+                    android:layout_gravity="bottom"
                     android:text="@string/name_astr"
                     android:textIsSelectable="true"
+
                     android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnDetailsAstr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"/>
+                    android:text="@string/details" />
             </LinearLayout>
         </LinearLayout>
 
@@ -161,7 +165,7 @@
                 android:contentDescription="@string/name_king"
                 android:src="@drawable/pict_king_small" />
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="4dp"
@@ -175,17 +179,24 @@
                     android:id="@+id/textViewKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:duplicateParentState="false"
                     android:text="@string/name_king"
                     android:textIsSelectable="true"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@id/btnDetailsKing"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btnDetailsKing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"/>
-            </LinearLayout>
+                    android:text="@string/details"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
         <Button
