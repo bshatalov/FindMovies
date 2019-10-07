@@ -3,13 +3,20 @@ package com.jefflogic.findmovies;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int colorPrimary = 0xFF000000;
     private static final int colorAccent = 0xFFFF0000;
@@ -24,15 +31,12 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonDetailsMale;
     private Button mButtonDetailsTerm;
     private Button mButtonDetailsKing;
-
-    private Button mInviteFriend;
+    private Button mInviteFriend ;
 
     private TextView mTextViewAstr;
     private TextView mTextViewMale;
     private TextView mTextViewTerm;
     private TextView mTextViewKing;
-
-    private View.OnClickListener mOnClickListener;
 
     private static Intent intentDetails;
 
@@ -50,11 +54,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (intentDetails == null) {
+            intentDetails = new Intent(MainActivity.this, Details.class);
+        }
+
         mButtonDetailsAstr = findViewById(R.id.btnDetailsAstr);
         mButtonDetailsMale = findViewById(R.id.btnDetailsMale);
         mButtonDetailsTerm = findViewById(R.id.btnDetailsTerm);
         mButtonDetailsKing = findViewById(R.id.btnDetailsKing);
-
         mInviteFriend = findViewById(R.id.btnInviteFriend);
 
         mTextViewAstr = findViewById(R.id.textViewAstr);
@@ -62,41 +69,12 @@ public class MainActivity extends AppCompatActivity {
         mTextViewTerm = findViewById(R.id.textViewTerm);
         mTextViewKing = findViewById(R.id.textViewKing);
 
-        mOnClickListener = new Button.OnClickListener() {
-            public void onClick(View v) {
-                openDetails((Button) v);
-            }
-        };
+        mButtonDetailsAstr.setOnClickListener(this);
+        mButtonDetailsKing.setOnClickListener(this);
+        mButtonDetailsMale.setOnClickListener(this);
+        mButtonDetailsTerm.setOnClickListener(this);
+        mInviteFriend.setOnClickListener(this);
 
-        mButtonDetailsAstr.setOnClickListener(mOnClickListener);
-        mButtonDetailsKing.setOnClickListener(mOnClickListener);
-        mButtonDetailsMale.setOnClickListener(mOnClickListener);
-        mButtonDetailsTerm.setOnClickListener(mOnClickListener);
-
-        mInviteFriend.setOnClickListener(
-                new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        String textMessage = "Установите наше приложение! FindMovies";
-                        Intent sendIntent = new Intent();
-                        sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
-                        sendIntent.setType("text/plain");
-
-                        String title = getResources().getString(R.string.chooser_title);
-                        // Создаем Intent для отображения диалога выбора.
-                        Intent chooser = Intent.createChooser(sendIntent, title);
-
-                        // Проверяем, что intent может быть успешно обработан
-                        if (sendIntent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(chooser);
-                        }
-                    }
-                }
-        );
-
-        if (intentDetails == null) {
-            intentDetails = new Intent(MainActivity.this, Details.class);
-        }
 
         // Восстановить состояние
         if (savedInstanceState != null) {
@@ -105,6 +83,26 @@ public class MainActivity extends AppCompatActivity {
             getSavedTextViewColor(savedInstanceState, mTextViewKing);
             getSavedTextViewColor(savedInstanceState, mTextViewTerm);
         }
+        /*
+        ViewGroup container = findViewById(R.id.container);
+        float density = getResources().getDisplayMetrics().density;
+        /*
+        View newView = new View(this);
+        newView.setBackgroundColor(Color.parseColor("#a08040"));
+        newView.setLayoutParams(new ViewGroup.LayoutParams((int)(100 * density), (int) (100 * density)));
+         */
+        /*
+        View page = LayoutInflater.from(this).inflate(R.layout.details, container, true);
+        page.setBackgroundColor(Color.argb(255,0,0,200));
+         */
+
+        //container.addView(page);
+        mTextViewAstr.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+            @Override
+            public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+                getMenuInflater().inflate(R.menu.main_menu, menu);
+            }
+        });
     }
 
     // Восстановить цвет
@@ -159,15 +157,56 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent data) {
+
         if (requestCode == REQUEST_CODE_LIKE) {
-            String comments = null;
-            Boolean like = null;
             if (resultCode == RESULT_OK) {
-                comments = data.getStringExtra(CODE_COMMENTS);
-                like = data.getBooleanExtra(CODE_LIKE, false);
+                String comments = data.getStringExtra(CODE_COMMENTS);
+                Boolean like = data.getBooleanExtra(CODE_LIKE, false);
+                Log.i("FIND_MOVIES", "Comments are: " + comments);
+                Log.i("FIND_MOVIES", like? "Like" : "Dislike");
             }
-            Log.i("FIND_MOVIES", "Comments are: " + comments);
-            Log.i("FIND_MOVIES", like? "Like" : "Dislike");
         }
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnInviteFriend) {
+
+            String textMessage = "Установите наше приложение! FindMovies";
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+            sendIntent.setType("text/plain");
+
+            String title = getResources().getString(R.string.chooser_title);
+            // Создаем Intent для отображения диалога выбора.
+            Intent chooser = Intent.createChooser(sendIntent, title);
+
+            // Проверяем, что intent может быть успешно обработан
+            if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(chooser);
+            }
+
+        }
+        else {
+            openDetails((Button) v);
+        }
+    };
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    };
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.android) {
+            Toast.makeText(this, "Android",Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
+

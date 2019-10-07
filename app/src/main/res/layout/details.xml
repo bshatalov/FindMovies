@@ -8,12 +8,12 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="800dp">
 
     <ImageView
         android:id="@+id/imageViewDetails"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_width="@dimen/imageDetailsWidth"
+        android:layout_height="@dimen/imageDetailsHeight"
         android:contentDescription="@string/details" />
 
         <LinearLayout

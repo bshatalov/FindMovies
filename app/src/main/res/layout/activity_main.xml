@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingTop="4dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:paddingLeft="4dp"
+        android:paddingTop="4dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="4dp">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:orientation="horizontal"
             android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:paddingTop="4dp"
-            >
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/imageWidth"
+                android:layout_height="@dimen/imageHeight"
                 android:contentDescription="@string/name_astr"
                 android:src="@drawable/pict_astr_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
-                android:orientation="vertical"
                 android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
 
                 >
 
@@ -50,9 +49,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
+                    android:lines="2"
+                    android:maxLines="5"
                     android:text="@string/name_astr"
                     android:textIsSelectable="true"
-
                     android:textSize="18sp" />
 
                 <Button
@@ -65,36 +65,36 @@
 
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:orientation="horizontal"
             android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:paddingTop="4dp"
-            >
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/imageWidth"
+                android:layout_height="@dimen/imageHeight"
                 android:contentDescription="@string/name_male"
                 android:src="@drawable/pict_male_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
                 android:orientation="vertical"
-                >
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
+                    android:lines="2"
+                    android:maxLines="5"
                     android:text="@string/name_male"
                     android:textIsSelectable="true"
                     android:textSize="18sp" />
@@ -103,77 +103,76 @@
                     android:id="@+id/btnDetailsMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"/>
+                    android:text="@string/details" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:orientation="horizontal"
             android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:paddingTop="4dp"
-            >
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/imageWidth"
+                android:layout_height="@dimen/imageHeight"
                 android:contentDescription="@string/name_term"
                 android:src="@drawable/pict_term_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
                 android:orientation="vertical"
-                >
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:duplicateParentState="false"
+                    android:lines="2"
+                    android:maxLines="5"
                     android:text="@string/name_term"
                     android:textIsSelectable="true"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnDetailsTerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details"/>
+                    android:text="@string/details" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:orientation="horizontal"
             android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:paddingTop="4dp"
-            >
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/imageWidth"
+                android:layout_height="@dimen/imageHeight"
                 android:contentDescription="@string/name_king"
                 android:src="@drawable/pict_king_small" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
                 android:orientation="vertical"
-                >
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewKing"
@@ -181,6 +180,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:duplicateParentState="false"
+                    android:lines="2"
+                    android:maxLines="5"
                     android:text="@string/name_king"
                     android:textIsSelectable="true"
                     android:textSize="18sp"
@@ -194,8 +195,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/details"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    />
+                    app:layout_constraintLeft_toLeftOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
@@ -203,9 +203,8 @@
             android:id="@+id/btnInviteFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/invite_friend">
-        </Button>
+            android:text="@string/invite_friend"></Button>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

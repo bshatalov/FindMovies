@@ -20,7 +20,6 @@ public class Details extends AppCompatActivity {
     private CheckBox mCheckBoxLike;
     private Button mButtonOk;
 
-
     private Intent intentResult;
 
     @Override
@@ -28,17 +27,11 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
 
-        if (intentResult == null) {
-            intentResult = new Intent();
-        }
-
         mTextViewDetails  = findViewById(R.id.textViewDetails);
         mImageViewDetails = findViewById(R.id.imageViewDetails);
 
         mTextViewComments = findViewById(R.id.textViewComments);
         mCheckBoxLike = findViewById(R.id.checkBoxLike);
-
-        mButtonOk = findViewById(R.id.buttonOk);
 
         // Получить переданные данные
         Intent intent = getIntent();
@@ -48,15 +41,21 @@ public class Details extends AppCompatActivity {
         mImageViewDetails.setImageResource(imageId);
         mTextViewDetails.setText(noteId);
 
+        if (intentResult == null) {
+            intentResult = new Intent();
+        }
+
+        mButtonOk = findViewById(R.id.buttonOk);
         mButtonOk.setOnClickListener(new Button.OnClickListener(){
-                public void onClick(View v) {
-                    intentResult.putExtra(MainActivity.commentsCode, mTextViewComments.getText().toString());
-                    intentResult.putExtra(MainActivity.likeCode, mCheckBoxLike.isChecked());
-                    setResult(RESULT_OK, intentResult);
-                    finish();
-                }
-            }
+                                         public void onClick(View v) {
+                                             intentResult.putExtra(MainActivity.commentsCode, mTextViewComments.getText().toString());
+                                             intentResult.putExtra(MainActivity.likeCode, mCheckBoxLike.isChecked());
+                                             setResult(RESULT_OK, intentResult);
+                                             finish();
+                                         }
+                                     }
         );
+
 
     }
 }
