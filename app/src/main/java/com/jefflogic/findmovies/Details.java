@@ -20,7 +20,6 @@ public class Details extends AppCompatActivity {
     private CheckBox mCheckBoxLike;
     private Button mButtonOk;
 
-
     private Intent intentResult;
 
     @Override
@@ -49,18 +48,17 @@ public class Details extends AppCompatActivity {
         mTextViewDetails.setText(noteId);
 
         mButtonOk.setOnClickListener(new Button.OnClickListener(){
-                public void onClick(View v) {
-                    intentResult.putExtra(MainActivity.commentsCode, mTextViewComments.getText().toString());
-                    intentResult.putExtra(MainActivity.likeCode, mCheckBoxLike.isChecked());
-                    setResult(RESULT_OK, intentResult);
-                    finish();
-                }
-            }
+                                         public void onClick(View v) {
+                                             intentResult.putExtra(MainActivity.commentsCode, mTextViewComments.getText().toString());
+                                             intentResult.putExtra(MainActivity.likeCode, mCheckBoxLike.isChecked());
+                                             setResult(RESULT_OK, intentResult);
+                                             finish();
+                                         }
+                                     }
         );
 
     }
 }
-
 
 
 

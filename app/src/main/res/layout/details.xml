@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:minHeight="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardBackgroundColor="@android:color/holo_orange_light"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardElevation="16dp"
+        card_view:cardCornerRadius="10dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
 
     <ImageView
         android:id="@+id/imageViewDetails"
@@ -15,7 +36,7 @@
         android:contentDescription="@string/details" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="right"
@@ -44,8 +65,9 @@
 
         </LinearLayout>
 
-
     </LinearLayout>>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewDetails"
@@ -60,6 +82,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="@string/textViewCommentsHint"/>
-
 
 </LinearLayout>
