@@ -1,8 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/container_addmovie"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:alpha="0"
+    tools:alpha="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMovie">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAddMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:text="@string/movie_description"
+        android:textSize="24sp"
+        />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/movie_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_movie_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/movie_notes" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAddMovieOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonOk"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>

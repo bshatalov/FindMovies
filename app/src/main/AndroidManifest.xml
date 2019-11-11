@@ -23,6 +23,10 @@
             android:name=".Details"
             android:label="Details">
         </activity>
+        <activity
+            android:name=".AddMovie"
+            android:label="AddMovie">
+        </activity>
     </application>
 
     <dist:module dist:instant="true" />

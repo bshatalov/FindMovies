@@ -7,59 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    >
+    <!--    tools:showIn="@layout/app_bar_main"-->
 
     <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="4dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingTop="4dp"
-        android:orientation="vertical"
+        android:paddingBottom="@dimen/linLayoutPadding"
+        android:paddingLeft="@dimen/linLayoutPadding"
+        android:paddingRight="@dimen/linLayoutPadding"
+        android:paddingTop="@dimen/linLayoutPadding"
         >
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="4dp"
+            android:paddingBottom="@dimen/linLayoutPadding"
+            android:paddingLeft="@dimen/linLayoutPadding"
+            android:paddingRight="@dimen/linLayoutPadding"
+            android:paddingTop="@dimen/linLayoutPadding"
             >
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:id="@+id/imageViewAstr"
+                android:layout_width="@dimen/imageViewWidth"
+                android:layout_height="@dimen/imageViewHeight"
                 android:contentDescription="@string/name_astr"
                 android:src="@drawable/pict_astr_small" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
-                android:orientation="vertical"
-                >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAstr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="false"
+                android:text="@string/name_astr"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/textSize"/>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/textViewAstr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:duplicateParentState="false"
-                    android:text="@string/name_astr"
-                    android:textIsSelectable="true"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/btnDetailsAstr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/details"/>
-            </LinearLayout>
         </LinearLayout>
 
 
@@ -67,27 +54,18 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="4dp"
+            android:paddingBottom="@dimen/linLayoutPadding"
+            android:paddingLeft="@dimen/linLayoutPadding"
+            android:paddingRight="@dimen/linLayoutPadding"
+            android:paddingTop="@dimen/linLayoutPadding"
             >
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:id="@+id/imageViewMale"
+                android:layout_width="@dimen/imageViewWidth"
+                android:layout_height="@dimen/imageViewHeight"
                 android:contentDescription="@string/name_male"
                 android:src="@drawable/pict_male_small" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
-                android:orientation="vertical"
-                >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewMale"
@@ -96,41 +74,26 @@
                     android:duplicateParentState="false"
                     android:text="@string/name_male"
                     android:textIsSelectable="true"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/textSize"/>
 
-                <Button
-                    android:id="@+id/btnDetailsMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/details"/>
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="4dp"
+            android:paddingBottom="@dimen/linLayoutPadding"
+            android:paddingLeft="@dimen/linLayoutPadding"
+            android:paddingRight="@dimen/linLayoutPadding"
+            android:paddingTop="@dimen/linLayoutPadding"
             >
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:id="@+id/imageViewTerm"
+                android:layout_width="@dimen/imageViewWidth"
+                android:layout_height="@dimen/imageViewHeight"
                 android:contentDescription="@string/name_term"
                 android:src="@drawable/pict_term_small" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
-                android:orientation="vertical"
-                >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewTerm"
@@ -139,40 +102,25 @@
                     android:duplicateParentState="false"
                     android:text="@string/name_term"
                     android:textIsSelectable="true"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/textSize"/>
 
-                <Button
-                    android:id="@+id/btnDetailsTerm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/details"/>
-            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="4dp"
+            android:paddingBottom="@dimen/linLayoutPadding"
+            android:paddingLeft="@dimen/linLayoutPadding"
+            android:paddingRight="@dimen/linLayoutPadding"
+            android:paddingTop="@dimen/linLayoutPadding"
             >
 
             <ImageView
-                android:layout_width="109dp"
-                android:layout_height="100dp"
+                android:id="@+id/imageViewKing"
+                android:layout_width="@dimen/imageViewWidth"
+                android:layout_height="@dimen/imageViewHeight"
                 android:contentDescription="@string/name_king"
                 android:src="@drawable/pict_king_small" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="4dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="4dp"
-                android:orientation="vertical"
-                >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textViewKing"
@@ -181,14 +129,8 @@
                     android:duplicateParentState="false"
                     android:text="@string/name_king"
                     android:textIsSelectable="true"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/textSize"/>
 
-                <Button
-                    android:id="@+id/btnDetailsKing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/details"/>
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -30,4 +30,7 @@
     <string name="menu_send">Send</string>
     <string name="menu_about">About</string>
     <string name="add_movie">Добавить фильм</string>
+    <string name="movie_description">Movie description:</string>
+    <string name="movie_name">Name</string>
+    <string name="movie_notes">Notes</string>
 </resources>
